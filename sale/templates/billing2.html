@@ -1,0 +1,149 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Estore </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="static/site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicon.ico">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="static/assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="static/assets/css/flaticon.css">
+            <link rel="stylesheet" href="static/assets/css/slicknav.css">
+            <link rel="stylesheet" href="static/assets/css/animate.min.css">
+            <link rel="stylesheet" href="static/assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="static/assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="static/assets/css/themify-icons.css">
+            <link rel="stylesheet" href="static/assets/css/slick.css">
+            <link rel="stylesheet" href="static/assets/css/nice-select.css">
+            <link rel="stylesheet" href="static/assets/css/style.css">
+   </head>
+
+   <body>
+       
+    
+
+    <header>
+               <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
+                                <div class="logo">
+                                  <a href="static/index.html"><img src="static/assets/img/logo/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav class="navbar-navbar-expand-sm bg-white fixed-top">  
+                                                                                    
+                                        <ul id="navigation">    
+                                            <img src="static/assets/img/logo/logo.png">
+                                            <li><a href="category">MANAGE CATEGORY</a></li>
+                                            <li><a href="subcategory">MANAGE SUBCATEGORY</a></li>
+                                            <li><a href="addclient">ADD CLIENT</a></li>
+                                            <li><a href="addcustomer">ADD CUSTOMER</a> </li>
+                                             {% comment %} <li><a href="addstaff">ADD STAFF</a> </li>  {% endcomment %}
+                                            <li><a href="stock">STOCKS</a> </li>
+                                            {% comment %} <li><a href="saleassign?id={{d.0}}">SALE ASSIGN</a></li> {% endcomment %}
+                                            <li><a href="billing2?id={{d.0}}"><font color="blue">BILLING</a></li>
+                                            <li><a href="sale">SALE</a></li>
+                                            <li><a href="index">LOGOUT</a></li></ul>
+                                            </nav>
+                                    
+                                            
+                            
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+       </div>
+      </header><br><br><br><br>
+       {% comment %} <div class="container contact">
+        <div class="row">
+            <div class="col-md-2">
+              <form method='post' enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="contact-info">
+                    <img src="static/assets/img/hero/h1_hero.jpg" width="1000px" height="300px"alt="image"/>  {% endcomment %}
+                     {% comment %} <h2>Contact Us</h2>
+                    <h4>We would love to hear from you !</h4>  {% endcomment %}
+                 {% comment %} </div>
+            </div> {% endcomment %}
+
+      {% comment %} <div class="col-md-10">
+        <div class="contact-form">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="c">customername:</label>
+              <div class="col-sm-10">          
+                <input type="text" class="form-control" id="c" placeholder="Enter customername" name="c" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="p">phonenumber:</label>
+              <div class="col-sm-10">          
+                <input type="text" class="form-control" id="p" placeholder="Enter number" name="p"  required>
+              </div>
+            </div>
+            <div class="form-group">        
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</form> {% endcomment %}
+
+
+ 
+
+  <div class="container forget-password">
+  <div class="row">
+      <div class="col-md-6 col-md-offset-6">
+          <div class="panel panel-default">
+              <div class="panel-body">
+                  <div class="text-center">
+                      <img src="static/assets/img/hero/book.png" width="400px" height="400px" alt="image" border="0">
+                      <h2 class="text-center">BILLING</h2>
+                      <p></p>
+                      <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                        {% csrf_token %}
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <select class="form-control" name="c" required>
+                                      <option selected="true" disabled="disabled">customername</option>
+                                      {% for i in ds %}
+                                      <option>{{i.1}}</option>
+                                      {% endfor %}
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                <input  name="p" placeholder="phonenumber" class="form-control"  type="text" required>
+                            </div>
+                       
+                      <div class="form-group">
+                        <input name="btnForget" class="btn btn-lg btn-primary " value="SUBMIT" type="submit">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+ 

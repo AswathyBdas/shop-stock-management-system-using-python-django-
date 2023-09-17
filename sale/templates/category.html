@@ -1,0 +1,133 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Estore </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="static/site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicon.ico">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="static/assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="static/assets/css/flaticon.css">
+            <link rel="stylesheet" href="static/assets/css/slicknav.css">
+            <link rel="stylesheet" href="static/assets/css/animate.min.css">
+            <link rel="stylesheet" href="static/assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="static/assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="static/assets/css/themify-icons.css">
+            <link rel="stylesheet" href="static/assets/css/slick.css">
+            <link rel="stylesheet" href="static/assets/css/nice-select.css">
+            <link rel="stylesheet" href="static/assets/css/style.css">
+   </head>
+
+   <body>
+       
+    
+
+    <header>
+               <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
+                                <div class="logo">
+                                  <a href="static/index.html"><img src="static/assets/img/logo/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav class="navbar-navbar-expand-sm bg-white fixed-top">  
+                                                                                    
+                                        <ul id="navigation">    
+                                            <img src="static/assets/img/logo/logo.png">
+                                                                                                                                                                            
+                                            <li><a href="category" ><font color="blue">MANAGE CATEGORY</a></li> </font>
+                                            <li><a href="subcategory">MANAGE SUBCATEGORY</a></li>
+                                            <li><a href="addclient">ADD CLIENT</a></li>
+                                            <li><a href="addcustomer">ADD CUSTOMER</a> </li>
+                                            {% comment %} <li><a href="addstaff">ADD STAFF</a> </li> {% endcomment %}
+                                            <li><a href="stock">STOCKS</a> </li>
+                                            {% comment %} <li><a href="saleassign?id={{d.0}}">SALE ASSIGN</a></li>
+                                            <li><a href="billing1?id={{d.0}}">BILLING</a></li> {% endcomment %}
+                                            <li><a href="sale">SALE</a></li>
+                                            <li><a href="index">LOGOUT</a></li></ul>
+                                            </nav>
+                                    
+                                            
+                            
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+       </div>
+    </header>
+<br><br><br><br>
+       {% comment %} <div style="background-color:#f5b7ce;height:240px;width:500px;position:relative;left:500px;top:120px">
+        <h5 align="center">ADD PRODUCTS</h5><br><br>
+    <form method="post">
+            {% csrf_token %}
+            <center>category:<input type="text" name="ct" required></center><br><br>
+        
+        <center><input type="submit" value="ADD" name="sub"></center>
+            </form>
+          </div></style> {% endcomment %}
+          <form method='post' enctype="multipart/form-data">
+            {% csrf_token %}
+            <section class="vh-100" style="background-color: #abf5f4;">
+              <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                  <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                      <div class="card-body p-5 text-center">
+            
+                        <h3 class="mb-5">CATEGORY</h3>
+            
+                        <div class="form-outline mb-4">
+                          <input type="text" name="ct" class="form-control form-control-lg"  required>
+                          <label class="form-label" >category</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                          <input type="file" name="f" class="form-control form-control-lg"  required>
+                          <label class="form-label" >image</label>
+                        </div>
+                        {{message}}
+
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">ADD</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </section>
+      </form>
+      
+      </div><br><br>
+      
+      <div class="container-fluid">
+        <div class="row">
+          {% for i in data %}
+            <div class="col-lg-3 col-md-3">
+        <img src="static/upload/{{i.2}}"height="130px" width="130px"></a><br> 
+        <h4><font color="blue">{{i.1}}</font></h5></a>
+      </div>
+        {% endfor %}
+    </div>
+    </div>
+    
+    </body>
+      </html> 
+          
+      
+    
+    
+    
+
+  
+       

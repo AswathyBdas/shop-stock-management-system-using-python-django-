@@ -1,0 +1,211 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Estore </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="static/site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicon.ico">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="static/assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="static/assets/css/flaticon.css">
+            <link rel="stylesheet" href="static/assets/css/slicknav.css">
+            <link rel="stylesheet" href="static/assets/css/animate.min.css">
+            <link rel="stylesheet" href="static/assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="static/assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="static/assets/css/themify-icons.css">
+            <link rel="stylesheet" href="static/assets/css/slick.css">
+            <link rel="stylesheet" href="static/assets/css/nice-select.css">
+            <link rel="stylesheet" href="static/assets/css/style.css">
+   </head>
+
+   <body>
+       
+    
+
+    <header>
+               <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
+                                <div class="logo">
+                                  <a href="static/index.html"><img src="static/assets/img/logo/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav class="navbar-navbar-expand-sm bg-white fixed-top">  
+                                                                                    
+                                        <ul id="navigation">    
+                                            <img src="static/assets/img/logo/logo.png">
+                                                                                                                                                                            
+                                            <li><a href="category">MANAGE CATEGORY</a></li>
+                                            <li><a href="subcategory"><font color="blue">MANAGE SUBCATEGORY</a></li> </font>
+                                            <li><a href="addclient">ADD CLIENT</a></li>
+                                            <li><a href="addcustomer">ADD CUSTOMER</a> </li>
+                                            {% comment %} <li><a href="addstaff">ADD STAFF</a> </li> {% endcomment %}
+                                            <li><a href="stock">STOCKS</a> </li>
+                                            {% comment %} <li><a href="saleassign?id={{d.0}}">SALE ASSIGN</a></li> {% endcomment %}
+                                            {% comment %} <li><a href="billing1?id={{d.0}}">BILLING</a></li> {% endcomment %}
+                                            <li><a href="sale">SALE</a></li>
+                                            <li><a href="index">LOGOUT</a></li></ul>
+                                            </nav>
+                                    
+                                            
+                            
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+       </div>
+    </header>
+
+       {% comment %} <div style="background-color:#f5b7ce;height:240px;width:500px;position:relative;left:500px;top:120px">
+        <h5 align="center">SUB CATEGORY</h5><br><br>
+    <form method="post">
+            {% csrf_token %}
+            <center>category:<input type="text" name="ct" required></center><br><br>
+            <center>subcategory:<input type="text" name="sc" required></center><br>
+            <center>quantity:<input type="text" name="qu" required></center><br>
+        <center><input type="submit" value="ADD" name="sub"></center>
+            </form>
+          </div></style> {% endcomment %}
+
+          <br><br><br><br>
+          <div class="container contact">
+            <div class="row">
+                <div class="col-md-6">
+                  <form method='post' enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="contact-info">
+                        <img src="static/assets/img/hero/sts3.jpg" width="1200px" height="600px"alt="image"/>
+                        {% comment %} <h2>Contact Us</h2>
+                        <h4>We would love to hear from you !</h4> {% endcomment %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-form">
+                         <div class="form-group">
+                          
+                          category<select name="ct">
+                            
+                            {% for i in data %}
+                            
+                            <option>{{i.1}}</option>
+                            {% endfor %}
+                          </select>
+                          
+                          
+                          </div>
+                        </div> 
+                       <br><br>
+                        <div class="form-group">
+                          <label class="control-label col-sm-2" for="sc">subcategory:</label>
+                          <div class="col-sm-10">          
+                            <input type="text" class="form-control" id="sc" placeholder="Enter subcategory" name="sc"  required>
+                            {{message}}
+                          </div>
+                        </div>
+                       
+                        {% comment %} <div class="form-group">
+                          <label class="control-label col-sm-2" for="qu">quantity:</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="qu" placeholder="Enter quantity" name="qu"  required>
+                          </div>
+                        </div> {% endcomment %}
+                        
+                        <div class="form-group">        
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">ADD</button>
+                            
+                          </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+      </form>
+
+      {% comment %} <div class="container-fluid">
+        <div class="row">
+          {% for i in data %}
+            <div class="col-lg-3 col-md-3">
+        
+        <h4><font color="blue">{{i.1}}-{{i.2}}</font></h5></a>
+          
+      </div>
+        {% endfor %}
+    </div>
+    </div> {% endcomment %}
+
+    <span class="counter pull-right"></span>
+    <table class="table table-hover table-bordered results">
+      <thead>
+        <tr>
+          <th class="col-md-2 col-xs-2"><font color="red">id</th>
+          <th class="col-md-2 col-xs-2"><font color="red">category</th>
+          <th class="col-md-2 col-xs-2"><font color="red">subcategory</th>
+          </tr>
+    </thead>
+      <tbody>
+        {% for i in data %}
+        <tr>
+          <th>{{i.0}}</th>
+          <td>{{i.1}}</td>
+          <td>{{i.2}}</td>
+
+         </tr>
+        {% endfor %}
+        
+        
+      </tbody>
+    </table> 
+
+
+        <!-- All JS Custom Plugins Link Here here -->
+        <script src="static/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="static/assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="static/assets/js/popper.min.js"></script>
+        <script src="static/assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="static/assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="static/assets/js/owl.carousel.min.js"></script>
+        <script src="static/assets/js/slick.min.js"></script>
+
+		<!-- One Page, Animated-HeadLin -->
+        <script src="static/assets/js/wow.min.js"></script>
+		<script src="static/assets/js/animated.headline.js"></script>
+        <script src="static/assets/js/jquery.magnific-popup.js"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="static/assets/js/jquery.scrollUp.min.js"></script>
+        <script src="static/assets/js/jquery.nice-select.min.js"></script>
+		<script src="static/assets/js/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="static/assets/js/contact.js"></script>
+        <script src="static/assets/js/jquery.form.js"></script>
+        <script src="static/assets/js/jquery.validate.min.js"></script>
+        <script src="static/assets/js/mail-script.js"></script>
+        <script src="static/assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="static/assets/js/plugins.js"></script>
+        <script src="static/assets/js/main.js"></script>
+      </body>
+    
+    </html>
+    
